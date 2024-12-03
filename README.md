@@ -34,7 +34,7 @@ Fraudulent transactions in financial services pose a significant challenge. This
 - Missing values handled and categorical features encoded.
 
 This pie chart illustrates the proportion of fraudulent versus non-fraudulent transactions in the dataset.
-<img src="/mnt/data/Fraud vs Non Fraud Transactions.png" alt="Fraud vs Non-Fraud Transactions" width="500">
+<img src="/assets/images/Fraud vs Non Fraud Transactions.png" alt="Fraud vs Non-Fraud Transactions" width="500">
 
 ## Workflow
 
@@ -43,10 +43,10 @@ This pie chart illustrates the proportion of fraudulent versus non-fraudulent tr
 - **Feature Engineering** derived features such as TransactionHour, TransactionAmt_mean_card, and Amt_to_mean_ratio to enhance predictive power.
 
 This histogram shows the distribution of transaction amounts before outlier removal.
-<img src="/mnt/data/Transaction Amt before outlier removal.png" alt="Transaction Amt before Outlier Removal" width="500">
+<img src="/assets/images/Transaction Amt before outlier removal.png" alt="Transaction Amt before Outlier Removal" width="500">
 
 This histogram shows the distribution of transaction amounts after outlier removal.
-<img src="/mnt/data/Transaction Amt after outlier removal.png" alt="Transaction Amt after Outlier Removal" width="500">
+<img src="/assets/images/Transaction Amt after outlier removal.png" alt="Transaction Amt after Outlier Removal" width="500">
 
 
 ### Model Training and Evaluation
@@ -64,24 +64,26 @@ This histogram shows the distribution of transaction amounts after outlier remov
 - **ROC-AUC** - Model's ability to distinguish between fraud and non-fraud.
 
 This heatmap visualizes the correlation between key features in the dataset.
-<img src="/mnt/data/Coorelation Heatmap for key features.png" alt="Correlation Heatmap for Key Features" width="500">
+<img src="/assets/images/Coorelation Heatmap for key features.png" alt="Correlation Heatmap for Key Features" width="500">
 
 
 ## Results
 
-| **Model**                | **Accuracy** | **Precision (0)** | **Precision (1)** | **Recall (0)** | **Recall (1)** | **F1-Score (0)** | **F1-Score (1)** | **ROC AUC** |
-|---------------------------|--------------|--------------------|--------------------|----------------|----------------|-------------------|-------------------|-------------|
-| Random Forest             | 0.8504       | 0.83              | 0.88              | 0.89          | 0.81          | 0.86             | 0.84             | 0.9241      |
-| Isolation Forest          | 0.5327       | 0.52              | 0.86              | 0.99          | 0.06          | 0.68             | 0.11             | 0.5254      |
-| Hybrid (RF + IF)          | 0.8410       | 0.82              | 0.87              | 0.88          | 0.80          | 0.85             | 0.83             | 0.8418      |
-| XGBoost                   | 0.8809       | 0.87              | 0.89              | 0.90          | 0.86          | 0.88             | 0.88             | 0.9527      |
-| LightGBM                  | 0.8723       | 0.86              | 0.89              | 0.90          | 0.85          | 0.88             | 0.87             | 0.9451      |
-| CatBoost                  | 0.8630       | 0.84              | 0.88              | 0.89          | 0.83          | 0.87             | 0.86             | 0.9385      |
-| Hybrid (RF + XGB)         | 0.8809       | 0.87              | 0.89              | 0.90          | 0.86          | 0.88             | 0.88             | 0.9525      |
-| Hybrid (XGBoost Meta)     | 0.8858       | 0.87              | 0.90              | 0.91          | 0.86          | 0.89             | 0.88             | 0.9536      |
+| **Model**                   | **Accuracy** | **Precision (0)** | **Precision (1)** | **Recall (0)** | **Recall (1)** | **F1-Score (0)** | **F1-Score (1)** | **ROC AUC** |
+|------------------------------|--------------|--------------------|--------------------|----------------|----------------|-------------------|-------------------|-------------|
+| **Random Forest**            | 0.8504       | 0.83              | 0.88              | 0.89          | 0.81          | 0.86             | 0.84             | 0.9241      |
+| **Isolation Forest**         | 0.5327       | 0.52              | 0.86              | 0.99          | 0.06          | 0.68             | 0.11             | 0.5254      |
+| **Hybrid (RF + IF)**         | 0.8410       | 0.82              | 0.87              | 0.88          | 0.80          | 0.85             | 0.83             | 0.8418      |
+| **XGBoost**                  | 0.8809       | 0.87              | 0.89              | 0.90          | 0.86          | 0.88             | 0.88             | 0.9527      |
+| **LightGBM**                 | 0.8723       | 0.86              | 0.89              | 0.90          | 0.85          | 0.88             | 0.87             | 0.9451      |
+| **CatBoost**                 | 0.8630       | 0.84              | 0.88              | 0.89          | 0.83          | 0.87             | 0.86             | 0.9385      |
+| **Hybrid (RF + XGB)**        | 0.8809       | 0.87              | 0.89              | 0.90          | 0.86          | 0.88             | 0.88             | 0.9525      |
+| **XGBoost (Hyperparameter)** | 0.8858       | 0.87              | 0.90              | 0.91          | 0.86          | 0.89             | 0.88             | 0.9536      |
+| **Random Forest (Hyperparameter)** | 0.8410 | 0.82              | 0.87              | 0.88          | 0.80          | 0.85             | 0.83             | 0.9233      |
+| **Isolation Forest (Hyperparameter)** | 0.5376 | 0.52           | 0.86              | 0.99          | 0.06          | 0.68             | 0.11             | 0.5307      |
 
 This bar chart compares the accuracy of different machine learning models.
-<img src="/mnt/data/Accuracy of Different Models.png" alt="Accuracy of Different Models" width="600">
+<img src="/assets/images/Accuracy of Different Models.png" alt="Accuracy of Different Models" width="600">
 
 
 ## Conclusion
@@ -90,13 +92,13 @@ This bar chart compares the accuracy of different machine learning models.
 - SHAP values revealed that **TransactionAmt** contributed **30%**, **card1** contributed **20%**, and **TransactionHour** contributed **15%** to the predictions. 
 
 This SHAP summary plot highlights the most important features for the Random Forest model.
-<img src="/mnt/data/Shap summary plot for RF.png" alt="SHAP Summary Plot for RF" width="600">
+<img src="/assets/images/Shap summary plot for RF.png" alt="SHAP Summary Plot for RF" width="600">
 
 This SHAP summary plot highlights the most important features for the XGBoost model.
-<img src="/mnt/data/Shap summary plot for XGB.png" alt="SHAP Summary Plot for XGB" width="600">
+<img src="/assets/images/Shap summary plot for XGB.png" alt="SHAP Summary Plot for XGB" width="600">
 
 This SHAP dependence plot shows the interaction effect of `TransactionAmt` with the model's predictions.
-<img src="/mnt/data/Shap dependence plot.png" alt="SHAP Dependence Plot" width="500">
+<img src="/assets/images/Shap dependence plot.png" alt="SHAP Dependence Plot" width="500">
 
 
 - Creating derived features like `TransactionHour` and `Amt_to_mean_ratio` significantly improved model predictions. Specifically, `TransactionHour` increased the Random Forest model's ROC AUC by **4.2%**, and `Amt_to_mean_ratio` contributed to a **6% improvement** in the F1-score across hybrid models.
